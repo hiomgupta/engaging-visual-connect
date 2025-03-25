@@ -7,37 +7,44 @@ const InteractionsOverview = () => {
     {
       icon: <Video className="h-10 w-10 text-blue-600" />,
       title: "Video Creation",
-      description: "Create professional videos with intuitive tools, AI-assisted editing, and templates."
+      description: "Create professional videos with intuitive tools, AI-assisted editing, and templates.",
+      example: "Example: Training video created in under 10 minutes with drag-and-drop tools."
     },
     {
       icon: <PenTool className="h-10 w-10 text-blue-600" />,
       title: "Voice Personalization",
-      description: "Transform text to speech with multilingual AI voiceovers and tone customization."
+      description: "Transform text to speech with multilingual AI voiceovers and tone customization.",
+      example: "Example: Convert product documentation into 15 languages with natural-sounding voices."
     },
     {
       icon: <MessageSquare className="h-10 w-10 text-blue-600" />,
       title: "Interactive Elements",
-      description: "Engage viewers with quizzes, hotspots, and branching scenarios within videos."
+      description: "Engage viewers with quizzes, hotspots, and branching scenarios within videos.",
+      example: "Example: Product training with interactive knowledge checks that improve retention by 40%."
     },
     {
       icon: <Play className="h-10 w-10 text-blue-600" />,
       title: "Social Integration",
-      description: "Create and share short-form video content optimized for social platforms."
+      description: "Create and share short-form video content optimized for social platforms.",
+      example: "Example: Convert long product demos into 30-second social highlights with one click."
     },
     {
       icon: <BarChart2 className="h-10 w-10 text-blue-600" />,
       title: "Analytics Dashboard",
-      description: "Track viewer engagement, content performance, and gain actionable insights."
+      description: "Track viewer engagement, content performance, and gain actionable insights.",
+      example: "Example: Identify drop-off points in training videos to improve completion rates."
     },
     {
       icon: <Search className="h-10 w-10 text-blue-600" />,
       title: "Video Search",
-      description: "Powerful search functionality for finding content across your video library."
+      description: "Powerful search functionality for finding content across your video library.",
+      example: "Example: Instantly locate specific product mentions across thousands of videos."
     },
     {
       icon: <FileText className="h-10 w-10 text-blue-600" />,
       title: "Documentation",
-      description: "Create video-based documentation and knowledge bases for better retention."
+      description: "Create video-based documentation and knowledge bases for better retention.",
+      example: "Example: Convert text-based procedures into visual guides that reduce support tickets."
     }
   ];
 
@@ -55,11 +62,14 @@ const InteractionsOverview = () => {
           {interactions.map((item, index) => (
             <div 
               key={index} 
-              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col"
             >
               <div className="mb-4">{item.icon}</div>
               <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-slate-600">{item.description}</p>
+              <p className="text-slate-600 mb-4">{item.description}</p>
+              <div className="mt-auto pt-4 border-t border-slate-100">
+                <p className="text-sm text-blue-600 italic">{item.example}</p>
+              </div>
             </div>
           ))}
         </div>
