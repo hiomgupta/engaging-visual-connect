@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
+import NavDropdown from './NavDropdown';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,10 +29,54 @@ const Header = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const navLinks = [
-    { name: 'Products & Features', path: '/products-features' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'Resources', path: '/resources' },
+  const productsDropdownSections = [
+    {
+      title: "CREATE",
+      items: [
+        { title: "XPRESSO - Effortless Video Creation", path: "/products-features/xpresso" },
+        { title: "KOEL - AI Voice Personalization", path: "/products-features/koel" },
+      ]
+    },
+    {
+      title: "ENGAGE",
+      items: [
+        { title: "PLAY - Interactive Experiences", path: "/products-features/play" },
+        { title: "FAB - Social Video Boosters", path: "/products-features/fab" },
+      ]
+    },
+    {
+      title: "ANALYZE",
+      items: [
+        { title: "TUBE - Hosting & Analytics", path: "/products-features/tube" },
+      ]
+    },
+    {
+      title: "PLATFORM",
+      items: [
+        { title: "Platform Overview", path: "/products-features/platform" },
+        { title: "Content Center", path: "/products-features/content-center" },
+      ]
+    }
+  ];
+
+  const resourcesDropdownSections = [
+    {
+      title: "ABOUT KPOINT",
+      items: [
+        { title: "KPoint Mission", path: "/resources/mission" },
+        { title: "About Us", path: "/resources/about" },
+        { title: "Join Our Team", path: "/resources/careers" },
+      ]
+    },
+    {
+      title: "CASE STUDIES",
+      items: [
+        { title: "30% Reduction in Ticket Resolution", path: "/resources/casestudy/30-percent-reduction" },
+        { title: "50% Increase in Accessibility", path: "/resources/casestudy/50-percent-increase" },
+        { title: "93 Days Saved", path: "/resources/casestudy/93-days-saved" },
+        { title: "40% Fewer Support Calls", path: "/resources/casestudy/40-less-support" },
+      ]
+    },
   ];
 
   return (
@@ -53,18 +98,25 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={cn(
-                'nav-link transition-colors',
-                isActive(link.path) ? 'nav-link-active' : ''
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
+          <NavDropdown 
+            label="Products & Features" 
+            sections={productsDropdownSections}
+            isActive={isActive('/products-features')}
+          />
+          <Link
+            to="/pricing"
+            className={cn(
+              'nav-link transition-colors',
+              isActive('/pricing') ? 'nav-link-active' : ''
+            )}
+          >
+            Pricing
+          </Link>
+          <NavDropdown 
+            label="Resources" 
+            sections={resourcesDropdownSections}
+            isActive={isActive('/resources')}
+          />
         </nav>
 
         {/* Call to Action Buttons */}
@@ -94,18 +146,41 @@ const Header = () => {
           )}
         >
           <div className="mt-16 flex flex-col space-y-8 items-center">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={cn(
-                  'text-xl font-medium',
-                  isActive(link.path) ? 'text-blue-600' : 'text-slate-800'
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
+            <div className="w-full">
+              <h3 className="text-lg font-medium mb-2 text-slate-900">Products & Features</h3>
+              <div className="space-y-2">
+                <h4 className="text-sm font-medium text-slate-700 mt-4">CREATE</h4>
+                <Link to="/products-features/xpresso" className="block text-sm text-slate-600 py-1">XPRESSO - Video Creation</Link>
+                <Link to="/products-features/koel" className="block text-sm text-slate-600 py-1">KOEL - AI Voice</Link>
+                
+                <h4 className="text-sm font-medium text-slate-700 mt-4">ENGAGE</h4>
+                <Link to="/products-features/play" className="block text-sm text-slate-600 py-1">PLAY - Interactive Videos</Link>
+                <Link to="/products-features/fab" className="block text-sm text-slate-600 py-1">FAB - Social Videos</Link>
+                
+                <h4 className="text-sm font-medium text-slate-700 mt-4">ANALYZE</h4>
+                <Link to="/products-features/tube" className="block text-sm text-slate-600 py-1">TUBE - Analytics</Link>
+                
+                <Link to="/products-features/platform" className="block text-sm text-slate-700 py-1 mt-4">Platform Overview</Link>
+              </div>
+            </div>
+            
+            <Link
+              to="/pricing"
+              className="text-xl font-medium text-slate-800"
+            >
+              Pricing
+            </Link>
+            
+            <div className="w-full">
+              <h3 className="text-lg font-medium mb-2 text-slate-900">Resources</h3>
+              <div className="space-y-2">
+                <Link to="/resources/mission" className="block text-sm text-slate-600 py-1">KPoint Mission</Link>
+                <Link to="/resources/about" className="block text-sm text-slate-600 py-1">About Us</Link>
+                <Link to="/resources/careers" className="block text-sm text-slate-600 py-1">Join Our Team</Link>
+                <Link to="/resources/case-studies" className="block text-sm text-slate-600 py-1">Case Studies</Link>
+              </div>
+            </div>
+            
             <div className="pt-6 w-full space-y-4">
               <Button href="/login" variant="outline" className="w-full">
                 Login

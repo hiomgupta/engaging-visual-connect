@@ -6,6 +6,7 @@ import Hero from '@/components/sections/Hero';
 import Features from '@/components/sections/Features';
 import CaseStudies from '@/components/sections/CaseStudies';
 import ProductsOverview from '@/components/sections/ProductsOverview';
+import InteractionsOverview from '@/components/sections/InteractionsOverview';
 import CTASection from '@/components/sections/CTASection';
 
 const Index = () => {
@@ -27,6 +28,7 @@ const Index = () => {
         <Hero />
         <Features />
         <ProductsOverview />
+        <InteractionsOverview />
         <CaseStudies />
         <CTASection />
       </main>
