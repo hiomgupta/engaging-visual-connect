@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Quotes } from 'lucide-react';
+import { Quote } from 'lucide-react';
 
 const Testimonials = () => {
   const testimonials = [
@@ -37,7 +37,7 @@ const Testimonials = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-slate-50 rounded-xl p-8 shadow-sm relative">
-              <Quotes className="absolute text-blue-100 h-24 w-24 -top-4 -left-4 opacity-50" />
+              <Quote className="absolute text-blue-100 h-24 w-24 -top-4 -left-4 opacity-50" />
               <div className="relative">
                 <p className="text-slate-700 italic mb-6">"{testimonial.quote}"</p>
                 <div className="pt-4 border-t border-slate-200">
