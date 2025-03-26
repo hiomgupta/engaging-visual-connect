@@ -31,6 +31,13 @@ const Header = () => {
 
   const productsDropdownSections = [
     {
+      title: "PLATFORM",
+      items: [
+        { title: "Platform Overview", path: "/products-features/platform" },
+        { title: "Content Center", path: "/products-features/content-center" },
+      ]
+    },
+    {
       title: "CREATE",
       items: [
         { title: "XPRESSO - Effortless Video Creation", path: "/products-features/xpresso" },
@@ -48,13 +55,6 @@ const Header = () => {
       title: "ANALYZE",
       items: [
         { title: "TUBE - Hosting & Analytics", path: "/products-features/tube" },
-      ]
-    },
-    {
-      title: "PLATFORM",
-      items: [
-        { title: "Platform Overview", path: "/products-features/platform" },
-        { title: "Content Center", path: "/products-features/content-center" },
       ]
     }
   ];
@@ -120,10 +120,7 @@ const Header = () => {
         </nav>
 
         {/* Call to Action Buttons */}
-        <div className="hidden md:flex items-center gap-4">
-          <Button href="/login" variant="outline" size="sm">
-            Login
-          </Button>
+        <div className="hidden md:flex items-center">
           <Button href="/demo" size="sm">
             Get a Demo
           </Button>
@@ -149,6 +146,9 @@ const Header = () => {
             <div className="w-full">
               <h3 className="text-lg font-medium mb-2 text-slate-900">Products & Features</h3>
               <div className="space-y-2">
+                <Link to="/products-features/platform" className="block text-sm text-slate-700 py-1 mt-4">Platform Overview</Link>
+                <Link to="/products-features/content-center" className="block text-sm text-slate-700 py-1">Content Center</Link>
+                
                 <h4 className="text-sm font-medium text-slate-700 mt-4">CREATE</h4>
                 <Link to="/products-features/xpresso" className="block text-sm text-slate-600 py-1">XPRESSO - Video Creation</Link>
                 <Link to="/products-features/koel" className="block text-sm text-slate-600 py-1">KOEL - AI Voice</Link>
@@ -159,8 +159,6 @@ const Header = () => {
                 
                 <h4 className="text-sm font-medium text-slate-700 mt-4">ANALYZE</h4>
                 <Link to="/products-features/tube" className="block text-sm text-slate-600 py-1">TUBE - Analytics</Link>
-                
-                <Link to="/products-features/platform" className="block text-sm text-slate-700 py-1 mt-4">Platform Overview</Link>
               </div>
             </div>
             
@@ -181,10 +179,7 @@ const Header = () => {
               </div>
             </div>
             
-            <div className="pt-6 w-full space-y-4">
-              <Button href="/login" variant="outline" className="w-full">
-                Login
-              </Button>
+            <div className="pt-6 w-full">
               <Button href="/demo" className="w-full">
                 Get a Demo
               </Button>

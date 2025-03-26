@@ -8,6 +8,7 @@ import CaseStudies from '@/components/sections/CaseStudies';
 import ProductsOverview from '@/components/sections/ProductsOverview';
 import InteractionsOverview from '@/components/sections/InteractionsOverview';
 import CTASection from '@/components/sections/CTASection';
+import Testimonials from '@/components/sections/Testimonials';
 
 const Index = () => {
   // Smooth scroll to section when URL has hash
@@ -30,6 +31,7 @@ const Index = () => {
         <ProductsOverview />
         <InteractionsOverview />
         <CaseStudies />
+        <Testimonials />
         <CTASection />
       </main>
       
