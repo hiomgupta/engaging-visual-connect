@@ -1,9 +1,7 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Play } from 'lucide-react';
 import VideoModal from '@/components/VideoModal';
-import FadeIn from '@/components/animations/FadeIn';
 
 const Hero = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);

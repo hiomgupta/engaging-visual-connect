@@ -1,7 +1,4 @@
-
 import React from 'react';
-import { Button } from '@/components/ui/Button';
-import FadeIn from '@/components/animations/FadeIn';
 
 interface ProductsOverviewProps {
   className?: string;
