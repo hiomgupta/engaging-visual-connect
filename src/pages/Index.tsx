@@ -27,7 +27,7 @@ const Index = () => {
       <Header />
       
       <main className="flex-grow">
-        <Hero />
+        <Hero className="hero-section" />
         <Features />
         <ProductsOverview className="products-section" />
         <InteractionsOverview />

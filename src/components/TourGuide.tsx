@@ -102,6 +102,13 @@ export const TourGuide: React.FC = () => {
     }
   };
 
+  // Apply highlight to current step element when tour is shown
+  useEffect(() => {
+    if (showTour) {
+      scrollToElement(tourSteps[currentStep].element);
+    }
+  }, [showTour, currentStep]);
+
   // Position the popup based on the current step's position preference
   const getPopupPosition = () => {
     if (!elementRect) return {};
@@ -142,12 +149,6 @@ export const TourGuide: React.FC = () => {
         };
     }
   };
-
-  useEffect(() => {
-    if (showTour) {
-      scrollToElement(tourSteps[currentStep].element);
-    }
-  }, [showTour, currentStep]);
 
   return (
     <>
