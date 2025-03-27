@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, ArrowRight, ArrowLeft, Circle, CircleCheck } from 'lucide-react';
 import { Button } from './ui/Button';
 import { cn } from '@/lib/utils';
 import TourButton from './TourButton';
@@ -49,6 +49,7 @@ export const TourGuide: React.FC = () => {
   const [showTour, setShowTour] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [showBanner, setShowBanner] = useState(false);
+  const [elementRect, setElementRect] = useState<DOMRect | null>(null);
   
   useEffect(() => {
     // Check if the tour has been taken before
@@ -69,6 +70,7 @@ export const TourGuide: React.FC = () => {
     setShowTour(false);
     localStorage.setItem('kpoint-tour-taken', 'true');
     document.body.style.overflow = ''; // Restore scrolling
+    setElementRect(null);
   };
 
   const nextStep = () => {
@@ -91,6 +93,53 @@ export const TourGuide: React.FC = () => {
     const element = document.querySelector(selector);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      
+      // Get element dimensions and position for the highlight overlay
+      setTimeout(() => {
+        const rect = element.getBoundingClientRect();
+        setElementRect(rect);
+      }, 500); // Give time for the scroll to complete
+    }
+  };
+
+  // Position the popup based on the current step's position preference
+  const getPopupPosition = () => {
+    if (!elementRect) return {};
+    
+    const padding = 20; // Space between element and popup
+    const position = tourSteps[currentStep].position || 'bottom';
+    
+    switch (position) {
+      case 'top':
+        return {
+          bottom: `${window.innerHeight - elementRect.top + padding}px`,
+          left: `${elementRect.left + elementRect.width / 2}px`,
+          transform: 'translateX(-50%)'
+        };
+      case 'bottom':
+        return {
+          top: `${elementRect.bottom + padding}px`,
+          left: `${elementRect.left + elementRect.width / 2}px`,
+          transform: 'translateX(-50%)'
+        };
+      case 'left':
+        return {
+          top: `${elementRect.top + elementRect.height / 2}px`,
+          right: `${window.innerWidth - elementRect.left + padding}px`,
+          transform: 'translateY(-50%)'
+        };
+      case 'right':
+        return {
+          top: `${elementRect.top + elementRect.height / 2}px`,
+          left: `${elementRect.right + padding}px`,
+          transform: 'translateY(-50%)'
+        };
+      default:
+        return {
+          top: `${elementRect.bottom + padding}px`,
+          left: `${elementRect.left + elementRect.width / 2}px`,
+          transform: 'translateX(-50%)'
+        };
     }
   };
 
@@ -98,7 +147,7 @@ export const TourGuide: React.FC = () => {
     if (showTour) {
       scrollToElement(tourSteps[currentStep].element);
     }
-  }, [showTour]);
+  }, [showTour, currentStep]);
 
   return (
     <>
@@ -117,8 +166,30 @@ export const TourGuide: React.FC = () => {
       )}
 
       {showTour && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
-          <div className="bg-white rounded-lg shadow-lg p-6 max-w-md mx-4">
+        <>
+          {/* Overlay with spotlight effect */}
+          <div className="fixed inset-0 z-50 bg-black/70 transition-opacity duration-300">
+            {elementRect && (
+              <div 
+                className="absolute spotlight-border border-2 border-primary animate-pulse transition-all duration-300"
+                style={{
+                  top: `${elementRect.top - 10}px`,
+                  left: `${elementRect.left - 10}px`,
+                  width: `${elementRect.width + 20}px`,
+                  height: `${elementRect.height + 20}px`,
+                  boxShadow: '0 0 0 9999px rgba(0, 0, 0, 0.7)',
+                  borderRadius: '4px',
+                  pointerEvents: 'none',
+                }}
+              />
+            )}
+          </div>
+
+          {/* Tour dialog */}
+          <div 
+            className="fixed z-[60] bg-white rounded-lg shadow-lg p-6 max-w-md mx-4 transition-all duration-300"
+            style={getPopupPosition()}
+          >
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-bold text-xl">{tourSteps[currentStep].title}</h3>
               <button onClick={endTour} className="text-gray-500 hover:text-gray-700">
@@ -132,26 +203,37 @@ export const TourGuide: React.FC = () => {
                 variant="outline" 
                 disabled={currentStep === 0}
                 className={cn(currentStep === 0 && "opacity-50 cursor-not-allowed")}
+                icon={<ArrowLeft size={16} />}
+                iconPosition="left"
               >
                 Previous
               </Button>
-              <div className="flex space-x-1 items-center">
+              <div className="flex space-x-2 items-center">
                 {tourSteps.map((_, index) => (
-                  <span 
-                    key={index} 
-                    className={cn(
-                      "h-2 w-2 rounded-full", 
-                      index === currentStep ? "bg-primary" : "bg-gray-300"
+                  <button
+                    key={index}
+                    onClick={() => setCurrentStep(index)}
+                    className="p-1 focus:outline-none"
+                    aria-label={`Go to step ${index + 1}`}
+                  >
+                    {index === currentStep ? (
+                      <CircleCheck size={18} className="text-primary" />
+                    ) : (
+                      <Circle size={16} className="text-gray-300" />
                     )}
-                  />
+                  </button>
                 ))}
               </div>
-              <Button onClick={nextStep}>
+              <Button 
+                onClick={nextStep}
+                icon={<ArrowRight size={16} />}
+                iconPosition="right"
+              >
                 {currentStep === tourSteps.length - 1 ? "Finish" : "Next"}
               </Button>
             </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );
