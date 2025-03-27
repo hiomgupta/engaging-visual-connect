@@ -12,6 +12,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   iconPosition?: "left" | "right";
 }
 
+export { buttonVariants } from "@/components/ui/button";
+
 export const Button = ({
   children,
   className,
