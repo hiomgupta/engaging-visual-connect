@@ -1,10 +1,12 @@
+import React from 'react';
 
-import { Button } from '@/components/ui/Button';
-import FadeIn from '@/components/animations/FadeIn';
+interface ProductsOverviewProps {
+  className?: string;
+}
 
-const ProductsOverview = () => {
+const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
   return (
-    <section className="py-20 md:py-32 bg-white" id="products">
+    <section className={`py-24 bg-white ${className}`} id="products">
       <div className="container-custom">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">

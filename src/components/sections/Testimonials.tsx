@@ -2,7 +2,11 @@
 import React from 'react';
 import { Quote } from 'lucide-react';
 
-const Testimonials = () => {
+interface TestimonialsProps {
+  className?: string;
+}
+
+const Testimonials = ({ className = '' }: TestimonialsProps) => {
   const testimonials = [
     {
       quote: "KPoint's video platform has revolutionized our training process. We've seen a 40% increase in information retention and significantly faster onboarding times.",
@@ -25,7 +29,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section className={`py-24 bg-white ${className}`}>
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>

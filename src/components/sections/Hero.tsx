@@ -1,15 +1,13 @@
-
-import { useState } from 'react';
-import { Play } from 'lucide-react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/Button';
+import { Play } from 'lucide-react';
 import VideoModal from '@/components/VideoModal';
-import FadeIn from '@/components/animations/FadeIn';
 
 const Hero = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-
+  
   return (
-    <section className="relative pt-28 pb-20 md:pt-36 md:pb-32 overflow-hidden bg-gradient-to-b from-white to-gray-50">
+    <section className="relative py-20 md:py-32 bg-gradient-to-b from-slate-50 to-white overflow-hidden hero-section">
       <div className="absolute inset-0 z-0 opacity-30">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl aspect-square rounded-full bg-blue-100/50 blur-3xl"></div>
         <div className="absolute top-3/4 left-1/4 w-full max-w-xl aspect-square rounded-full bg-orange-100/40 blur-3xl"></div>

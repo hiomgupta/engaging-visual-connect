@@ -9,6 +9,7 @@ import ProductsOverview from '@/components/sections/ProductsOverview';
 import InteractionsOverview from '@/components/sections/InteractionsOverview';
 import CTASection from '@/components/sections/CTASection';
 import Testimonials from '@/components/sections/Testimonials';
+import TourGuide from '@/components/TourGuide';
 
 const Index = () => {
   // Smooth scroll to section when URL has hash
@@ -28,14 +29,15 @@ const Index = () => {
       <main className="flex-grow">
         <Hero />
         <Features />
-        <ProductsOverview />
+        <ProductsOverview className="products-section" />
         <InteractionsOverview />
         <CaseStudies />
-        <Testimonials />
-        <CTASection />
+        <Testimonials className="testimonials-section" />
+        <CTASection className="cta-section" />
       </main>
       
       <Footer />
+      <TourGuide />
     </div>
   );
 };
