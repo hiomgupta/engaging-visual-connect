@@ -63,40 +63,44 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   iconPosition?: "left" | "right";
 }
 
-export const Button = ({
-  children,
-  className,
-  href,
-  variant = "default",
-  size = "default",
-  icon,
-  iconPosition = "right",
-  ...props
-}: ButtonProps) => {
-  const classes = cn(buttonVariants({ variant, size, className }));
-  
-  const content = (
-    <>
-      {icon && iconPosition === "left" && <span className="mr-1">{icon}</span>}
-      {children}
-      {icon && iconPosition === "right" && <span className="ml-1">{icon}</span>}
-    </>
-  );
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({
+    children,
+    className,
+    href,
+    variant = "default",
+    size = "default",
+    icon,
+    iconPosition = "right",
+    ...props
+  }, ref) => {
+    const classes = cn(buttonVariants({ variant, size, className }));
+    
+    const content = (
+      <>
+        {icon && iconPosition === "left" && <span className="mr-1">{icon}</span>}
+        {children}
+        {icon && iconPosition === "right" && <span className="ml-1">{icon}</span>}
+      </>
+    );
 
-  if (href) {
+    if (href) {
+      return (
+        <Link to={href} className={classes}>
+          {content}
+        </Link>
+      );
+    }
+
     return (
-      <Link to={href} className={classes}>
+      <ShadcnButton variant={variant} size={size} className={className} ref={ref} {...props}>
         {content}
-      </Link>
+      </ShadcnButton>
     );
   }
-
-  return (
-    <ShadcnButton variant={variant} size={size} className={className} {...props}>
-      {content}
-    </ShadcnButton>
-  );
-};
+);
+Button.displayName = "Button";
 
 // Re-export buttonVariants for other components that need it
 export { buttonVariants };
+export default Button;

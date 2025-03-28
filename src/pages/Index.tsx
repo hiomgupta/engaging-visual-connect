@@ -11,6 +11,10 @@ import CTASection from '@/components/sections/CTASection';
 import Testimonials from '@/components/sections/Testimonials';
 import TourGuide from '@/components/TourGuide';
 
+interface SectionProps {
+  className?: string;
+}
+
 const Index = () => {
   // Smooth scroll to section when URL has hash
   useEffect(() => {
@@ -29,8 +33,8 @@ const Index = () => {
       <main className="flex-grow">
         <Hero className="hero-section" />
         <ProductsOverview className="products-section" />
-        <Features className="features-section" />
         <InteractionsOverview className="interactions-section" />
+        <Features className="features-section" />
         <CaseStudies className="case-studies-section" />
         <Testimonials className="testimonials-section" />
         <CTASection className="cta-section" />
