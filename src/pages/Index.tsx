@@ -9,7 +9,6 @@ import ProductsOverview from '@/components/sections/ProductsOverview';
 import InteractionsOverview from '@/components/sections/InteractionsOverview';
 import CTASection from '@/components/sections/CTASection';
 import Testimonials from '@/components/sections/Testimonials';
-import TourGuide from '@/components/TourGuide';
 
 interface SectionProps {
   className?: string;
@@ -41,7 +40,6 @@ const Index = () => {
       </main>
       
       <Footer />
-      <TourGuide />
     </div>
   );
 };
