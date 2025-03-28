@@ -7,7 +7,11 @@ import {
   Layers, Users, Zap, Clock 
 } from 'lucide-react';
 
-const InteractionsOverview = () => {
+interface InteractionsOverviewProps {
+  className?: string;
+}
+
+const InteractionsOverview = ({ className = '' }: InteractionsOverviewProps) => {
   const interactions = [
     {
       icon: <Video className="h-10 w-10 text-blue-600" />,
@@ -72,7 +76,7 @@ const InteractionsOverview = () => {
   ];
 
   return (
-    <section className="py-20 bg-slate-50">
+    <section className={`py-20 bg-slate-50 ${className}`}>
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl font-bold mb-4">Interactive Video Capabilities</h2>

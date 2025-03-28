@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { X, ArrowRight, ArrowLeft, Circle, CircleCheck } from 'lucide-react';
-import { Button } from './ui/Button';
+import { Button } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import TourButton from './TourButton';
 
@@ -15,32 +15,56 @@ interface TourStep {
 const tourSteps: TourStep[] = [
   {
     element: 'header',
-    title: 'Sticky Navigation Bar',
-    description: 'Our new sticky nav with 3 categories makes navigation simpler and faster for executives.',
+    title: 'Improved Navigation',
+    description: 'Our new sticky navigation bar with cleanly organized categories makes finding what you need simpler and faster.',
     position: 'bottom'
   },
   {
-    element: '.hero-section',
-    title: 'Redesigned Hero Section',
-    description: 'Captivating hero with a punchy tagline, demo video, and clear CTAs that drive 30% more clicks.',
+    element: '.hero-section h1',
+    title: 'Strong Value Proposition',
+    description: '"All Videos. All Possibilities." Our punchy tagline clearly communicates what we do and the value we deliver to enterprises.',
     position: 'bottom'
+  },
+  {
+    element: '.hero-section button:nth-of-type(2)',
+    title: 'Video Demonstration',
+    description: 'Optional video playback gives visitors a quick way to see our platform in action without leaving the page.',
+    position: 'right'
+  },
+  {
+    element: '.hero-section .flex.flex-wrap.gap-4',
+    title: 'Clear Call-to-Actions',
+    description: 'Strong, action-oriented buttons make it easy for visitors to take the next step in their journey.',
+    position: 'bottom'
+  },
+  {
+    element: '.hero-section .flex.flex-wrap.items-center',
+    title: 'Trust Builders',
+    description: 'Logos of companies we\'ve worked with build immediate credibility with new visitors.',
+    position: 'top'
   },
   {
     element: '.products-section',
-    title: 'Simplified Product Showcase',
-    description: 'Scannable cards with examples and clear CTAs for deeper exploration of our features.',
+    title: 'Complete Solution Overview',
+    description: 'Our platform is divided into three clear categories - CREATE, ENGAGE, and ANALYZE - making our comprehensive offering easy to understand.',
+    position: 'bottom'
+  },
+  {
+    element: '.interactions-section',
+    title: 'Feature Showcase',
+    description: 'We highlight all our powerful features right on the main page so visitors can quickly see everything we offer.',
+    position: 'left'
+  },
+  {
+    element: '.case-studies-section',
+    title: 'Proven Results',
+    description: 'Real-world case studies with measurable results demonstrate the tangible impact our platform delivers.',
     position: 'right'
   },
   {
     element: '.testimonials-section',
-    title: 'Trust Testimonials',
-    description: 'Real testimonials from industry leaders that build instant credibility.',
-    position: 'left'
-  },
-  {
-    element: '.cta-section',
-    title: 'Clear Call-to-Action',
-    description: 'Start your journey with KPoint and transform your enterprise video experience.',
+    title: 'Customer Testimonials',
+    description: 'Authentic feedback from satisfied customers builds confidence in our platform and services.',
     position: 'top'
   }
 ];
@@ -204,10 +228,8 @@ export const TourGuide: React.FC = () => {
                 variant="outline" 
                 disabled={currentStep === 0}
                 className={cn(currentStep === 0 && "opacity-50 cursor-not-allowed")}
-                icon={<ArrowLeft size={16} />}
-                iconPosition="left"
               >
-                Previous
+                <ArrowLeft size={16} className="mr-2" /> Previous
               </Button>
               <div className="flex space-x-2 items-center">
                 {tourSteps.map((_, index) => (
@@ -227,10 +249,8 @@ export const TourGuide: React.FC = () => {
               </div>
               <Button 
                 onClick={nextStep}
-                icon={<ArrowRight size={16} />}
-                iconPosition="right"
               >
-                {currentStep === tourSteps.length - 1 ? "Finish" : "Next"}
+                {currentStep === tourSteps.length - 1 ? "Finish" : "Next"} <ArrowRight size={16} className="ml-2" />
               </Button>
             </div>
           </div>

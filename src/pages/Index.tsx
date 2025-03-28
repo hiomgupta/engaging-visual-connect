@@ -28,10 +28,10 @@ const Index = () => {
       
       <main className="flex-grow">
         <Hero className="hero-section" />
-        <Features />
         <ProductsOverview className="products-section" />
-        <InteractionsOverview />
-        <CaseStudies />
+        <Features className="features-section" />
+        <InteractionsOverview className="interactions-section" />
+        <CaseStudies className="case-studies-section" />
         <Testimonials className="testimonials-section" />
         <CTASection className="cta-section" />
       </main>

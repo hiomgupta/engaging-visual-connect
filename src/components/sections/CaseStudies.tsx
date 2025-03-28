@@ -14,7 +14,11 @@ type CaseStudy = {
   color: string;
 };
 
-const CaseStudies = () => {
+interface CaseStudiesProps {
+  className?: string;
+}
+
+const CaseStudies = ({ className = '' }: CaseStudiesProps) => {
   const [activeCase, setActiveCase] = useState(0);
 
   const caseStudies: CaseStudy[] = [
@@ -77,7 +81,7 @@ const CaseStudies = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-gray-50" id="case-studies">
+    <section className={`py-20 md:py-32 bg-gray-50 ${className}`} id="case-studies">
       <div className="container-custom">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">

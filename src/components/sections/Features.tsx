@@ -13,7 +13,11 @@ type Feature = {
   image: string;
 };
 
-const Features = () => {
+interface FeaturesProps {
+  className?: string;
+}
+
+const Features = ({ className = '' }: FeaturesProps) => {
   const [activeFeature, setActiveFeature] = useState('xpresso');
 
   const features: Feature[] = [
@@ -123,7 +127,7 @@ const Features = () => {
   const currentFeature = features.find(f => f.id === activeFeature) || features[0];
 
   return (
-    <section className="py-20 md:py-32 bg-white" id="features">
+    <section className={`py-20 md:py-32 bg-white ${className}`} id="features">
       <div className="container-custom">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
