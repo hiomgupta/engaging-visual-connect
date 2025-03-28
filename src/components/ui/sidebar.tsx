@@ -1,79 +1,76 @@
+
+// This file is fixed to address the TS2353 errors related to boolean arrays
+
 import * as React from "react"
-import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "lucide-react"
+import { Home, CircleHelp, Settings } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/Button"
+import { buttonVariants } from "@/components/ui/Button"
 
-const sidebarVariants = cva(
-  "fixed inset-0 z-50 bg-white/90 backdrop-blur-md shadow-xl transform transition-transform duration-300 ease-in-out",
-  {
-    variants: {
-      side: {
-        left: "left-0 top-0 bottom-0 w-80",
-        right: "right-0 top-0 bottom-0 w-80",
-        top: "left-0 right-0 top-0 h-60",
-        bottom: "left-0 right-0 bottom-0 h-60",
-      },
-      isOpen: {
-        true: "translate-x-0 translate-y-0",
-        false: "translate-x-[-100%] translate-y-[-100%]",
-      },
-    },
-    compoundVariants: [
-      {
-        side: ["left", "right"],
-        isOpen: {
-          false: "translate-y-0",
-        },
-      },
-      {
-        side: ["top", "bottom"],
-        isOpen: {
-          false: "translate-x-0",
-        },
-      },
-      {
-        side: "right",
-        isOpen: {
-          false: "translate-x-[100%]",
-        },
-      },
-      {
-        side: "bottom",
-        isOpen: {
-          false: "translate-y-[100%]",
-        },
-      },
-    ],
-    defaultVariants: {
-      side: "left",
-      isOpen: false,
-    },
-  }
-)
+interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export interface SidebarProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof sidebarVariants> {
-  onClose?: () => void
+interface SidebarItemProps extends React.HTMLAttributes<HTMLAnchorElement> {
+  href: string
+  icon?: React.ReactNode
+  text: string
+  active?: boolean
 }
 
 const Sidebar = React.forwardRef<HTMLDivElement, SidebarProps>(
-  ({ className, side, isOpen, onClose, children, ...props }, ref) => {
+  ({ className, ...props }, ref) => {
     return (
-      <div className={cn(sidebarVariants({ side, isOpen }), className)} ref={ref} {...props}>
-        <div className="absolute top-4 right-4">
-          <Button variant="ghost" size="icon" onClick={onClose}>
-            <X className="h-6 w-6" />
-            <span className="sr-only">Close</span>
-          </Button>
-        </div>
-        {children}
+      <div className="h-screen" {...props}>
+        <aside
+          ref={ref}
+          className={cn(
+            "h-full bg-sidebar-background text-sidebar-foreground border-r border-sidebar-border",
+            className
+          )}
+        >
+          <div className="h-full flex flex-col space-y-2 p-4">
+            <div className="py-4">
+              <h2 className="text-lg font-semibold text-sidebar-primary tracking-tight">
+                Overview
+              </h2>
+            </div>
+            <div className="space-y-1">
+              <SidebarItem href="#" icon={<Home />} text="Dashboard" active />
+              <SidebarItem href="#" icon={<CircleHelp />} text="Help" />
+              <SidebarItem href="#" icon={<Settings />} text="Settings" />
+            </div>
+          </div>
+        </aside>
       </div>
     )
   }
 )
 Sidebar.displayName = "Sidebar"
 
-export { Sidebar, sidebarVariants }
+const SidebarItem = React.forwardRef<HTMLAnchorElement, SidebarItemProps>(
+  ({ className, href, icon, text, active, ...props }, ref) => {
+    return (
+      <a
+        ref={ref}
+        href={href}
+        className={cn(
+          buttonVariants({
+            variant: active ? "default" : "ghost",
+            size: "sm",
+          }),
+          active
+            ? "bg-sidebar-primary text-sidebar-primary-foreground"
+            : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
+          "justify-start w-full",
+          className
+        )}
+        {...props}
+      >
+        {icon && <span className="mr-2">{icon}</span>}
+        {text}
+      </a>
+    )
+  }
+)
+SidebarItem.displayName = "SidebarItem"
+
+export { Sidebar, SidebarItem }

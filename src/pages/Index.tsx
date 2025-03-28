@@ -9,6 +9,7 @@ import ProductsOverview from '@/components/sections/ProductsOverview';
 import InteractionsOverview from '@/components/sections/InteractionsOverview';
 import CTASection from '@/components/sections/CTASection';
 import Testimonials from '@/components/sections/Testimonials';
+import TourGuide from '@/components/TourGuide';
 
 interface SectionProps {
   className?: string;
@@ -30,7 +31,7 @@ const Index = () => {
       <Header />
       
       <main className="flex-grow">
-        <Hero className="hero-section" />
+        <Hero />
         <ProductsOverview className="products-section" />
         <InteractionsOverview className="interactions-section" />
         <Features className="features-section" />
@@ -40,6 +41,7 @@ const Index = () => {
       </main>
       
       <Footer />
+      <TourGuide />
     </div>
   );
 };
