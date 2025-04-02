@@ -32,7 +32,7 @@ const Testimonials = ({ className = '' }: TestimonialsProps) => {
     <section className={`py-24 bg-white ${className}`}>
       <div className="container-custom">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl font-bold mb-4 text-gray-700">What Our Clients Say</h2>
+          <h2 className="text-4xl font-bold mb-4 text-gray-800">What Our Clients Say</h2>
           <p className="text-lg text-gray-600">
             Hear from business leaders who have transformed their enterprise communications with KPoint.
           </p>

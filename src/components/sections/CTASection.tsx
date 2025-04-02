@@ -8,7 +8,7 @@ interface CTASectionProps {
 
 const CTASection = ({ className = '' }: CTASectionProps) => {
   return (
-    <section className={`py-20 bg-gray-300 text-gray-800 ${className}`}>
+    <section className={`py-20 bg-gray-200 text-gray-800 ${className}`}>
       <div className="container-custom">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="text-center md:text-left">
@@ -18,10 +18,10 @@ const CTASection = ({ className = '' }: CTASectionProps) => {
             </p>
           </div>
           <div className="text-center md:text-right">
-            <Button href="/contact" variant="secondary" size="lg" className="bg-gray-800 text-white hover:bg-gray-700">
+            <Button href="/contact" variant="secondary" size="lg" className="bg-gray-700 text-white hover:bg-gray-600">
               Contact Sales
             </Button>
-            <Button href="/demo" variant="outline" size="lg" className="ml-4 border-gray-600 text-gray-800">
+            <Button href="/demo" variant="outline" size="lg" className="ml-4 border-gray-500 text-gray-700">
               Request Demo
             </Button>
           </div>
