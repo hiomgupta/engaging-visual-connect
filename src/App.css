@@ -1,3 +1,4 @@
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,6 +6,41 @@
   text-align: center;
 }
 
+/* Wireframe styles */
+.wireframe-box {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.wireframe-image {
+  background-color: #e0e0e0;
+  border: 1px dashed #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 14px;
+}
+
+.wireframe-button {
+  background-color: #d0d0d0;
+  border: 1px solid #aaa;
+  color: #333;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  font-weight: normal;
+}
+
+.wireframe-input {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  color: #555;
+}
+
+/* Original styles with modifications */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -12,10 +48,10 @@
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #888);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #888);
 }
 
 @keyframes logo-spin {

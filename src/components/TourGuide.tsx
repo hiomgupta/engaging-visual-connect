@@ -64,7 +64,9 @@ const TourGuide = () => {
         showBullets: true,
         showProgress: true,
         exitOnOverlayClick: false,
-        disableInteraction: false
+        disableInteraction: false,
+        tooltipClass: 'bg-gray-800 text-white',
+        highlightClass: 'intro-highlight-wireframe'
       }).start();
     }
   };
