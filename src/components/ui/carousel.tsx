@@ -1,6 +1,4 @@
 
-// This file is fixed to address the TS2304 error regarding UseEmblaCarouselType
-
 import * as React from "react"
 import { ArrowLeft, ArrowRight } from "lucide-react"
 
@@ -17,6 +15,7 @@ const CarouselContext = React.createContext<{
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  orientation?: "horizontal" | "vertical"
 }>({
   carouselRef: null,
   api: undefined,
@@ -24,6 +23,7 @@ const CarouselContext = React.createContext<{
   scrollNext: () => {},
   canScrollPrev: false,
   canScrollNext: false,
+  orientation: "horizontal"
 })
 
 function useCarousel() {
@@ -95,6 +95,7 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          orientation
         }}
       >
         <Comp

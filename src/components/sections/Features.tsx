@@ -25,7 +25,7 @@ const Features = ({ className = '' }: FeaturesProps) => {
       id: 'xpresso',
       title: 'XPRESSO',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 3v12"></path>
           <path d="m8 11 4 4 4-4"></path>
           <path d="M8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4"></path>
@@ -38,13 +38,13 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'AI-powered editing suggestions',
         'Quick rendering and publishing'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/3b82f6&text=XPRESSO+Dashboard'
+      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=XPRESSO+Dashboard'
     },
     {
       id: 'koel',
       title: 'KOEL',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M12 17.5a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z"></path>
           <path d="M15.5 14 18 16.5"></path>
           <path d="M8.5 14 6 16.5"></path>
@@ -59,13 +59,13 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'Customizable tone and emotion settings',
         'Seamless integration with XPRESSO'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/3b82f6&text=KOEL+Voice+Tool'
+      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=KOEL+Voice+Tool'
     },
     {
       id: 'play',
       title: 'PLAY',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="12" cy="12" r="10"></circle>
           <path d="m10 8 6 4-6 4V8Z"></path>
         </svg>
@@ -77,13 +77,13 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'Branching scenarios for personalized journeys',
         'Detailed engagement analytics'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/3b82f6&text=PLAY+Interactive+Video'
+      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=PLAY+Interactive+Video'
     },
     {
       id: 'fab',
       title: 'FAB',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <rect width="18" height="18" x="3" y="3" rx="2"></rect>
           <path d="M9 14v1"></path>
           <path d="M9 19v2"></path>
@@ -102,13 +102,13 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'One-click multi-platform publishing',
         'Engagement tracking across platforms'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/3b82f6&text=FAB+Social+Video'
+      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=FAB+Social+Video'
     },
     {
       id: 'tube',
       title: 'TUBE',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
           <circle cx="12" cy="12" r="3"></circle>
         </svg>
@@ -120,7 +120,7 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'AI-powered content search capabilities',
         'Seamless integration with other KPoint tools'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/3b82f6&text=TUBE+Analytics+Dashboard'
+      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=TUBE+Analytics+Dashboard'
     }
   ];
 
@@ -136,9 +136,9 @@ const Features = ({ className = '' }: FeaturesProps) => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               One Video Platform.<br />
-              <span className="text-gray-800">All Possibilities.</span>
+              <span className="text-black">All Possibilities.</span>
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-700">
               Create, engage, and analyze with KPoint's comprehensive suite of video tools designed for enterprise needs.
             </p>
           </div>
@@ -153,13 +153,13 @@ const Features = ({ className = '' }: FeaturesProps) => {
                 onClick={() => setActiveFeature(feature.id)}
                 className={`w-full flex items-start gap-4 p-4 rounded-xl text-left transition-all hover-scale ${
                   activeFeature === feature.id
-                    ? 'bg-gray-800 border-gray-700 border text-white'
+                    ? 'bg-gray-900 border-gray-800 border text-white'
                     : 'bg-gray-100 hover:bg-gray-200'
                 }`}
               >
                 <div className={`p-3 rounded-lg ${
                   activeFeature === feature.id
-                    ? 'bg-gray-700'
+                    ? 'bg-gray-800'
                     : 'bg-gray-200'
                 }`}>
                   {feature.icon}
@@ -185,19 +185,19 @@ const Features = ({ className = '' }: FeaturesProps) => {
             <div className="bg-gray-100 rounded-2xl p-6 md:p-8 overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-800">{currentFeature.title}</h3>
-                  <p className="text-gray-600 mb-6">{currentFeature.description}</p>
+                  <h3 className="text-2xl font-bold mb-4 text-black">{currentFeature.title}</h3>
+                  <p className="text-gray-700 mb-6">{currentFeature.description}</p>
                   
                   <ul className="space-y-3 mb-8">
                     {currentFeature.benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="text-gray-700 w-5 h-5 shrink-0 mt-0.5" />
-                        <span className="text-gray-700">{benefit}</span>
+                        <CheckCircle className="text-gray-900 w-5 h-5 shrink-0 mt-0.5" />
+                        <span className="text-gray-800">{benefit}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <Button href={`/products-features#${currentFeature.id}`} className="bg-gray-700 hover:bg-gray-800 text-white">
+                  <Button href={`/products-features#${currentFeature.id}`} className="bg-gray-900 hover:bg-black text-white">
                     Learn more about {currentFeature.title}
                   </Button>
                 </div>

@@ -20,20 +20,20 @@ const Hero = () => {
           {/* Hero content */}
           <FadeIn direction="right" className="max-w-2xl">
             <div className="inline-block mb-4 px-3 py-1 bg-gray-200 border border-gray-300 rounded-full">
-              <p className="text-gray-700 text-sm font-medium">One Enterprise Video Platform</p>
+              <p className="text-gray-900 text-sm font-medium">One Enterprise Video Platform</p>
             </div>
             
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="text-gray-800">All Videos.</span><br />
-              <span className="text-gray-700">All Possibilities.</span>
+              <span className="text-black">All Videos.</span><br />
+              <span className="text-gray-900">All Possibilities.</span>
             </h1>
             
-            <p className="text-lg text-gray-600 mb-8 max-w-lg">
+            <p className="text-lg text-gray-700 mb-8 max-w-lg">
               Reimagine how you communicate with KPoint's integrated video creation, engagement, and analytics solution trusted by leading enterprises.
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <Button href="/demo" size="lg" className="bg-gray-800 text-white hover:bg-gray-700">
+              <Button href="/demo" size="lg" className="bg-gray-900 text-white hover:bg-black">
                 Get a Demo
               </Button>
               
@@ -41,20 +41,20 @@ const Hero = () => {
                 variant="outline" 
                 size="lg"
                 onClick={() => setIsVideoModalOpen(true)}
-                icon={<Play size={18} className="text-gray-700" />}
+                icon={<Play size={18} className="text-gray-900" />}
                 iconPosition="left"
-                className="border-gray-400 text-gray-700"
+                className="border-gray-400 text-gray-900"
               >
                 Watch how it works
               </Button>
             </div>
             
             <div className="mt-8 pt-6 border-t border-gray-300">
-              <p className="text-sm text-gray-500 mb-3">Trusted by leading enterprises</p>
+              <p className="text-sm text-gray-600 mb-3">Trusted by leading enterprises</p>
               <div className="flex flex-wrap items-center gap-6">
-                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-600 text-xs border border-gray-400">ICICI Lombard</div>
-                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-600 text-xs border border-gray-400">Bank of Baroda</div>
-                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-600 text-xs border border-gray-400">Enterprise</div>
+                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">ICICI Lombard</div>
+                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Bank of Baroda</div>
+                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Enterprise</div>
               </div>
             </div>
           </FadeIn>
@@ -62,8 +62,8 @@ const Hero = () => {
           {/* Hero image/animation */}
           <FadeIn delay={300} direction="left" className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-md border border-gray-300 bg-gray-200 aspect-video">
-              <div className="absolute inset-0 bg-gradient-to-tr from-gray-500/80 to-gray-400/40 z-10"></div>
-              <div className="w-full h-full flex items-center justify-center text-gray-600">
+              <div className="absolute inset-0 bg-gradient-to-tr from-gray-700/80 to-gray-500/40 z-10"></div>
+              <div className="w-full h-full flex items-center justify-center text-gray-700">
                 <span className="text-xl font-medium">KPoint Platform Preview</span>
               </div>
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
@@ -84,15 +84,15 @@ const Hero = () => {
             <div className="absolute -bottom-6 -right-6 md:bottom-8 md:-right-12 bg-white rounded-2xl p-4 shadow-md border border-gray-300 animate-float">
               <div className="flex items-center gap-4">
                 <div className="p-3 bg-gray-200 rounded-xl">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900">
                     <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"></path>
                     <path d="M3 5v14a2 2 0 0 0 2 2h16v-5"></path>
                     <path d="M18 12a2 2 0 0 0 0 4h4v-4Z"></path>
                   </svg>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 font-medium">ENGAGEMENT</p>
-                  <p className="text-lg font-bold text-gray-700">50% Increase</p>
+                  <p className="text-xs text-gray-600 font-medium">ENGAGEMENT</p>
+                  <p className="text-lg font-bold text-gray-900">50% Increase</p>
                 </div>
               </div>
             </div>
