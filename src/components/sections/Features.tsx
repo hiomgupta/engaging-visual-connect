@@ -25,7 +25,7 @@ const Features = ({ className = '' }: FeaturesProps) => {
       id: 'xpresso',
       title: 'XPRESSO',
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-700">
           <path d="M12 3v12"></path>
           <path d="m8 11 4 4 4-4"></path>
           <path d="M8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4"></path>
@@ -131,14 +131,14 @@ const Features = ({ className = '' }: FeaturesProps) => {
       <div className="container-custom">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-block mb-4 px-3 py-1 bg-orange-50 border border-orange-100 rounded-full">
-              <p className="text-orange-600 text-sm font-medium">Powerful Features</p>
+            <div className="inline-block mb-4 px-3 py-1 bg-gray-100 border border-gray-200 rounded-full">
+              <p className="text-gray-800 text-sm font-medium">Powerful Features</p>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               One Video Platform.<br />
-              <span className="orange-text-gradient">All Possibilities.</span>
+              <span className="text-gray-800">All Possibilities.</span>
             </h2>
-            <p className="text-lg text-slate-600">
+            <p className="text-lg text-gray-600">
               Create, engage, and analyze with KPoint's comprehensive suite of video tools designed for enterprise needs.
             </p>
           </div>
@@ -153,20 +153,28 @@ const Features = ({ className = '' }: FeaturesProps) => {
                 onClick={() => setActiveFeature(feature.id)}
                 className={`w-full flex items-start gap-4 p-4 rounded-xl text-left transition-all hover-scale ${
                   activeFeature === feature.id
-                    ? 'bg-blue-50 border-blue-100 border'
-                    : 'bg-gray-50 hover:bg-blue-50/50'
+                    ? 'bg-gray-800 border-gray-700 border text-white'
+                    : 'bg-gray-100 hover:bg-gray-200'
                 }`}
               >
                 <div className={`p-3 rounded-lg ${
                   activeFeature === feature.id
-                    ? 'bg-blue-100'
-                    : 'bg-gray-100'
+                    ? 'bg-gray-700'
+                    : 'bg-gray-200'
                 }`}>
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold mb-1">{feature.title}</h3>
-                  <p className="text-slate-600 text-sm">{feature.description}</p>
+                  <h3 className={`text-lg font-semibold mb-1 ${
+                    activeFeature === feature.id ? 'text-white' : 'text-gray-800'
+                  }`}>
+                    {feature.title}
+                  </h3>
+                  <p className={`text-sm ${
+                    activeFeature === feature.id ? 'text-gray-200' : 'text-gray-600'
+                  }`}>
+                    {feature.description}
+                  </p>
                 </div>
               </button>
             ))}
@@ -174,22 +182,22 @@ const Features = ({ className = '' }: FeaturesProps) => {
 
           {/* Feature content */}
           <FadeIn delay={200} className="lg:col-span-2">
-            <div className="bg-gray-50 rounded-2xl p-6 md:p-8 overflow-hidden">
+            <div className="bg-gray-100 rounded-2xl p-6 md:p-8 overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4">{currentFeature.title}</h3>
-                  <p className="text-slate-600 mb-6">{currentFeature.description}</p>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-800">{currentFeature.title}</h3>
+                  <p className="text-gray-600 mb-6">{currentFeature.description}</p>
                   
                   <ul className="space-y-3 mb-8">
                     {currentFeature.benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start gap-2">
-                        <CheckCircle className="text-blue-600 w-5 h-5 shrink-0 mt-0.5" />
-                        <span>{benefit}</span>
+                        <CheckCircle className="text-gray-700 w-5 h-5 shrink-0 mt-0.5" />
+                        <span className="text-gray-700">{benefit}</span>
                       </li>
                     ))}
                   </ul>
                   
-                  <Button href={`/products-features#${currentFeature.id}`}>
+                  <Button href={`/products-features#${currentFeature.id}`} className="bg-gray-700 hover:bg-gray-800 text-white">
                     Learn more about {currentFeature.title}
                   </Button>
                 </div>
