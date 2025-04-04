@@ -5,6 +5,8 @@ import { Play } from 'lucide-react';
 import VideoModal from '@/components/VideoModal';
 import FadeIn from '@/components/animations/FadeIn';
 
+const KPOINT_VIDEO_URL = "https://ccoe.kpoint.com/app/video/gcc-805d6533-3ba2-4173-9310-396d260ccb71/v4/embedded?nv3Embed=1&trk_page_title=Home%2520%257C%2520KPOINThome%2520%257C%2520KPOINT&trk_viewport=width%253Ddevice-width%252C%2520initial-scale%253D1%252C%2520shrink-to-fit%253Dno&trk_title=Home&trk_description=learn%2520new%2520experience%2520with%2520KPOINT.&trk_author=KPOINT%2520Technologies&trk_og_title=Home&trk_og_description=learn%2520new%2520experience%2520with%2520KPOINT.&trk_og_site_name=Home&autoplay=false&loop=true&playerSkinType=social&search=false&toc=false&muted=true&source_url=aHR0cHM6Ly93d3cua3BvaW50LmNvbS8=#msgToken=token_gcc-805d6533-3ba2-4173-9310-396d260ccb71_1";
+
 const Hero = () => {
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   
@@ -63,9 +65,16 @@ const Hero = () => {
           <FadeIn delay={300} direction="left" className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-md border border-gray-300 bg-gray-200 aspect-video">
               <div className="absolute inset-0 bg-gradient-to-tr from-gray-700/80 to-gray-500/40 z-10"></div>
-              <div className="w-full h-full flex items-center justify-center text-gray-700">
-                <span className="text-xl font-medium">KPoint Platform Preview</span>
-              </div>
+              
+              {/* Added KPoint video as background */}
+              <iframe 
+                src={`${KPOINT_VIDEO_URL}&autoplay=true&muted=true`}
+                className="absolute inset-0 w-full h-full z-0"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                title="KPoint Platform Background"
+              ></iframe>
+              
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
                 <h3 className="text-white text-xl font-semibold mb-2">1M+ Video Views Daily</h3>
                 <p className="text-white/80">Enterprise-grade video platform for all your needs</p>
@@ -104,6 +113,7 @@ const Hero = () => {
       <VideoModal 
         isOpen={isVideoModalOpen} 
         onClose={() => setIsVideoModalOpen(false)} 
+        videoSrc={KPOINT_VIDEO_URL}
       />
     </section>
   );
