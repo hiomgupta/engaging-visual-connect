@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
@@ -12,23 +11,11 @@ import Testimonials from '@/components/sections/Testimonials';
 import TourGuide from '@/components/TourGuide';
 import WelcomeDialog from '@/components/WelcomeDialog';
 
-interface SectionProps {
-  className?: string;
-}
-
 const Index = () => {
   const [showWelcomeDialog, setShowWelcomeDialog] = useState(false);
-  const [tourRef, setTourRef] = useState<any>(null);
-  
-  // Check if first visit on component mount
-  useEffect(() => {
-    const hasVisitedBefore = localStorage.getItem('hasVisitedBefore');
-    
-    if (!hasVisitedBefore) {
-      setShowWelcomeDialog(true);
-      localStorage.setItem('hasVisitedBefore', 'true');
-    }
-  }, []);
+  const [startTour, setStartTour] = useState(false);
+  const [tourRef, setTourRef] = useState<null | (() => void)>(null);
+
 
   // Smooth scroll to section when URL has hash
   useEffect(() => {
@@ -40,18 +27,23 @@ const Index = () => {
     }
   }, []);
 
-  const handleDialogClose = (startTour: boolean) => {
+  const handleDialogClose = (shouldStartTour: boolean) => {
     setShowWelcomeDialog(false);
-    
-    if (startTour && tourRef) {
-      tourRef();
+    if (shouldStartTour) {
+      setStartTour(true); // Trigger tour after dialog is closed
     }
   };
+
+  useEffect(() => {
+    if (startTour && tourRef) {
+      tourRef(); // Start the tour after everything is ready
+    }
+  }, [startTour, tourRef]);
 
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       <main className="flex-grow">
         <Hero />
         <ProductsOverview className="products-section" />
@@ -61,9 +53,12 @@ const Index = () => {
         <Testimonials className="testimonials-section" />
         <CTASection className="cta-section" />
       </main>
-      
+
       <Footer />
-      <TourGuide onTourRef={setTourRef} />
+
+      {/* Only mount TourGuide after dialog is dismissed */}
+      {!showWelcomeDialog && <TourGuide onTourRef={setTourRef} />}
+
       <WelcomeDialog 
         isOpen={showWelcomeDialog} 
         onClose={handleDialogClose} 
