@@ -8,6 +8,7 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
+  AlertDialogCancel,
 } from '@/components/ui/alert-dialog';
 import { Sparkles } from 'lucide-react';
 
@@ -30,7 +31,13 @@ const WelcomeDialog: React.FC<WelcomeDialogProps> = ({ isOpen, onClose }) => {
             Let's explore the new and improved KPoint website!
           </AlertDialogDescription>
         </AlertDialogHeader>
-        <AlertDialogFooter className="flex justify-center sm:justify-center">
+        <AlertDialogFooter className="flex justify-center sm:justify-between">
+          <AlertDialogCancel
+            onClick={() => onClose(false)}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-800"
+          >
+            Skip Tour
+          </AlertDialogCancel>
           <AlertDialogAction 
             onClick={() => onClose(true)}
             className="bg-gray-900 hover:bg-black text-white"
