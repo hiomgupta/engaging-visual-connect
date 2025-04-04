@@ -54,21 +54,30 @@ const Hero = () => {
               <div className="flex flex-wrap items-center gap-6">
                 <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">ICICI Lombard</div>
                 <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Bank of Baroda</div>
-                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Enterprise</div>
+                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Tech Mahindra</div>
+                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Tata Communication</div>
+                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Siemens</div>
+                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Axis Capital</div>
+                <div className="h-8 w-32 bg-gray-300 flex items-center justify-center text-gray-800 text-xs border border-gray-400">Citco Group</div>
               </div>
             </div>
           </FadeIn>
           
           {/* Hero image/animation */}
           <FadeIn delay={300} direction="left" className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-md border border-gray-300 bg-gray-200 aspect-video">
-              <div className="absolute inset-0 bg-gradient-to-tr from-gray-700/80 to-gray-500/40 z-10"></div>
-              <div className="w-full h-full flex items-center justify-center text-gray-700">
-                <span className="text-xl font-medium">KPoint Platform Preview</span>
-              </div>
+          <div className="relative rounded-2xl overflow-hidden shadow-md border border-gray-300 bg-gray-200 aspect-video">
+          {/* Autoplay Embedded Video */}
+          <iframe
+            src="https://ccoe.kpoint.com/app/video/gcc-805d6533-3ba2-4173-9310-396d260ccb71/v4/embedded?autoplay=true&muted=true&loop=true&controls=false&playerSkinType=none"
+            className="absolute top-0 left-0 w-full h-full"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            title="KPoint Platform Preview"
+          ></iframe>
               <div className="absolute bottom-0 left-0 right-0 p-6 z-20">
-                <h3 className="text-white text-xl font-semibold mb-2">1M+ Video Views Daily</h3>
-                <p className="text-white/80">Enterprise-grade video platform for all your needs</p>
+                <h3 className="text-black text-xl font-semibold mb-2">1M+ Video Views Daily</h3>
+                <p className="text-black/80">Enterprise-grade video platform for all your needs</p>
               </div>
               
               {/* Play button overlay */}

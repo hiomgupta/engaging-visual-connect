@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
-
+import Features from '@/components/sections/Features';
 interface ProductsOverviewProps {
   className?: string;
 }
@@ -29,7 +29,7 @@ const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Create section */}
           <FadeIn delay={100} direction="up" className="col-span-1 lg:col-span-3">
-            <div className="bg-slate-900 rounded-2xl overflow-hidden premium-shadow">
+            <div className="bg-slate-700 rounded-2xl overflow-hidden premium-shadow">
               <div className="p-8 md:p-10">
                 <div className="flex flex-col md:flex-row gap-8 md:items-center">
                   <div className="md:w-1/2">
@@ -72,20 +72,23 @@ const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
                         </div>
                       </div>
                     </div>
-                    
-                    <Button href="/products-features#create">
+                    <Button href="Features" className="bg-white text-blue-600 hover:bg-blue-50">
                       Explore creation tools
                     </Button>
                   </div>
                   
                   <div className="md:w-1/2">
-                    <div className="rounded-xl overflow-hidden shadow-lg">
-                      <img 
-                        src="https://dummyimage.com/800x600/1e293b/4e80f0&text=Creation+Tools" 
-                        alt="KPoint Creation Tools"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                  <div className="rounded-xl overflow-hidden shadow-lg aspect-video">
+                    <iframe
+                      src="https://ccoe.kpoint.com/app/video/gcc-0f799164-d7ec-45dd-8c49-bab11b7c59a1/v4/embedded?nv3Embed=1&trk_page_title=XPRESSO%2520%257C%2520KPOINT&trk_viewport=width%253Ddevice-width%252C%2520initial-scale%253D1%252C%2520shrink-to-fit%253Dno&trk_title=XPRESSO&trk_description=learn%2520new%2520experience%2520with%2520KPOINT.&trk_author=KPOINT%2520Technologies&trk_og_title=XPRESSO&trk_og_description=learn%2520new%2520experience%2520with%2520KPOINT.&trk_og_site_name=XPRESSO&autoplay=true&loop=true&playerSkinType=social&search=false&toc=false&playercontrols=%7B%22hide%22%3A%22all%22%7D&muted=true&source_url=aHR0cHM6Ly93d3cua3BvaW50LmNvbS9wcm9kdWN0cy94cHJlc3NvLw==#msgToken=token_gcc-0f799164-d7ec-45dd-8c49-bab11b7c59a1_2"
+                      title="KPoint Creation Tools"
+                      className="w-full h-full"
+                      allow="autoplay; fullscreen"
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+
                   </div>
                 </div>
               </div>
@@ -139,15 +142,18 @@ const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
                   </div>
                 </div>
                 
-                <div className="rounded-xl overflow-hidden shadow-lg mb-8">
-                  <img 
-                    src="https://dummyimage.com/800x400/1e40af/60a5fa&text=Engagement+Features" 
-                    alt="KPoint Engagement Features"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="rounded-xl overflow-hidden shadow-lg aspect-video mb-8">
+                <iframe
+                      src="https://ccoe.kpoint.com/app/video/gcc-73eaeee1-fd11-4125-ba43-d8cb5295d450/v4/embedded?nv3Embed=1&trk_page_title=PLAY%2520%257C%2520KPOINT&trk_viewport=width%253Ddevice-width%252C%2520initial-scale%253D1%252C%2520shrink-to-fit%253Dno&trk_title=PLAY&trk_description=learn%2520new%2520experience%2520with%2520KPOINT.&trk_author=KPOINT%2520Technologies&trk_og_title=PLAY&trk_og_description=learn%2520new%2520experience%2520with%2520KPOINT.&trk_og_site_name=PLAY&autoplay=true&loop=true&playerSkinType=social&search=false&toc=false&playercontrols=%7B%22hide%22%3A%22all%22%7D&resume=false&showPlayIconOnMobile=false&like=false&add-widgets=utils%2Cmarkup%2Cfontloader%2Ckpw_branching%2Ckpw_actionbutton%2Ccustomform&muted=true&source_url=aHR0cHM6Ly93d3cua3BvaW50LmNvbS9wcm9kdWN0cy9wbGF5Lw==#msgToken=token_gcc-73eaeee1-fd11-4125-ba43-d8cb5295d450_3"
+                      title="KPoint Creation Tools"
+                      className="w-full h-full"
+                      allow="autoplay; fullscreen"
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
                 </div>
                 
-                <Button href="/products-features#engage" className="bg-white text-blue-600 hover:bg-blue-50">
+                <Button href="/Features" className="bg-white text-blue-600 hover:bg-blue-50">
                   Explore engagement tools
                 </Button>
               </div>
@@ -179,15 +185,18 @@ const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
                   </div>
                 </div>
                 
-                <div className="rounded-xl overflow-hidden shadow-lg mb-8">
-                  <img 
-                    src="https://dummyimage.com/800x400/9a3412/fdba74&text=Analytics+Dashboard" 
-                    alt="KPoint Analytics Dashboard"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="rounded-xl overflow-hidden shadow-lg aspect-video  mb-8">
+                <iframe
+                      src="https://ccoe.kpoint.com/app/video/gcc-0f799164-d7ec-45dd-8c49-bab11b7c59a1/v4/embedded?nv3Embed=1&trk_page_title=XPRESSO%2520%257C%2520KPOINT&trk_viewport=width%253Ddevice-width%252C%2520initial-scale%253D1%252C%2520shrink-to-fit%253Dno&trk_title=XPRESSO&trk_description=learn%2520new%2520experience%2520with%2520KPOINT.&trk_author=KPOINT%2520Technologies&trk_og_title=XPRESSO&trk_og_description=learn%2520new%2520experience%2520with%2520KPOINT.&trk_og_site_name=XPRESSO&autoplay=true&loop=true&playerSkinType=social&search=false&toc=false&playercontrols=%7B%22hide%22%3A%22all%22%7D&muted=true&source_url=aHR0cHM6Ly93d3cua3BvaW50LmNvbS9wcm9kdWN0cy94cHJlc3NvLw==#msgToken=token_gcc-0f799164-d7ec-45dd-8c49-bab11b7c59a1_2"
+                      title="KPoint Creation Tools"
+                      className="w-full h-full"
+                      allow="autoplay; fullscreen"
+                      frameBorder="0"
+                      allowFullScreen
+                    ></iframe>
                 </div>
                 
-                <Button href="/products-features#analyze" className="bg-white text-orange-600 hover:bg-orange-50">
+                <Button href="/Features" className="bg-white text-blue-600 hover:bg-blue-50">
                   Explore analytics tools
                 </Button>
               </div>
