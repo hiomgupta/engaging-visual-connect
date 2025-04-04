@@ -1,5 +1,5 @@
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import TourButton from './TourButton';
 
 declare global {
@@ -8,7 +8,11 @@ declare global {
   }
 }
 
-const TourGuide = () => {
+interface TourGuideProps {
+  onTourRef?: (startTour: () => void) => void;
+}
+
+const TourGuide: React.FC<TourGuideProps> = ({ onTourRef }) => {
   const introInstanceRef = useRef<any>(null);
 
   const startTour = () => {
@@ -70,6 +74,13 @@ const TourGuide = () => {
       }).start();
     }
   };
+
+  // Expose the startTour function to parent component
+  useEffect(() => {
+    if (onTourRef) {
+      onTourRef(startTour);
+    }
+  }, [onTourRef]);
 
   return <TourButton onClick={startTour} />;
 };
