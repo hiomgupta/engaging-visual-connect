@@ -44,7 +44,10 @@ const Index = () => {
     setShowWelcomeDialog(false);
     
     if (startTour && tourRef) {
-      tourRef();
+      // Ensure the tour starts immediately after dialog closes
+      setTimeout(() => {
+        tourRef();
+      }, 100);
     }
   };
 
