@@ -1,6 +1,7 @@
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import TourButton from './TourButton';
+import { useLocation } from 'react-router-dom';
 
 declare global {
   interface Window {
@@ -10,6 +11,14 @@ declare global {
 
 const TourGuide = () => {
   const introInstanceRef = useRef<any>(null);
+  const location = useLocation();
+
+  // Check if the tour should start automatically
+  useEffect(() => {
+    if (location.state && location.state.startTour) {
+      startTour();
+    }
+  }, [location]);
 
   const startTour = () => {
     if (window.introJs) {
@@ -58,6 +67,11 @@ const TourGuide = () => {
           {
             element: document.querySelector('.testimonials-section'),
             intro: "Step 9: Testimonials—reinforces trust with client logos and implied quotes after case studies.",
+            position: 'top'
+          },
+          {
+            element: document.querySelector('.cta-section'),
+            intro: "Step 10: Final Call To Action—clear and direct options to contact sales or request a demo.",
             position: 'top'
           }
         ],

@@ -18,7 +18,7 @@ const CTASection = ({ className = '' }: CTASectionProps) => {
             </p>
           </div>
           <div className="text-center md:text-right">
-            <Button href="/contact" variant="secondary" size="lg" className="bg-gray-900 text-white hover:bg-black">
+            <Button href="/contact" size="lg" className="bg-gray-900 text-white hover:bg-black">
               Contact Sales
             </Button>
             <Button href="/demo" variant="outline" size="lg" className="ml-4 border-gray-500 text-gray-900">
