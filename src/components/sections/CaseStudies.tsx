@@ -120,7 +120,7 @@ const CaseStudies = ({ className = '' }: CaseStudiesProps) => {
                 </p>
                 
                 <Button 
-                  href={`/resources/casestudy/${currentCase.id}`}
+                  href={`https://www.kpoint.com/resources/kpoint-now/Rebranding-our-Product-Updates---Introducing-KPOINT-NOW!/`}
                   icon={<ArrowRight size={16} />}
                 >
                   Read full case study

@@ -1,13 +1,19 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/Button';
 import FadeIn from '@/components/animations/FadeIn';
-import Features from '@/components/sections/Features';
+
 interface ProductsOverviewProps {
   className?: string;
 }
 
 const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className={`py-24 bg-white ${className}`} id="products">
       <div className="container-custom">
@@ -72,7 +78,7 @@ const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
                         </div>
                       </div>
                     </div>
-                    <Button href="Features" className="bg-white text-blue-600 hover:bg-blue-50">
+                    <Button onClick={scrollToFeatures} className="bg-white text-blue-600 hover:bg-blue-50">
                       Explore creation tools
                     </Button>
                   </div>
@@ -153,7 +159,7 @@ const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
                     ></iframe>
                 </div>
                 
-                <Button href="/Features" className="bg-white text-blue-600 hover:bg-blue-50">
+                <Button onClick={scrollToFeatures} className="bg-white text-blue-600 hover:bg-blue-50">
                   Explore engagement tools
                 </Button>
               </div>
@@ -196,7 +202,7 @@ const ProductsOverview = ({ className = '' }: ProductsOverviewProps) => {
                     ></iframe>
                 </div>
                 
-                <Button href="/Features" className="bg-white text-blue-600 hover:bg-blue-50">
+                <Button onClick={scrollToFeatures} className="bg-white text-blue-600 hover:bg-blue-50">
                   Explore analytics tools
                 </Button>
               </div>

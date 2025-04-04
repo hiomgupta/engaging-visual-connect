@@ -38,7 +38,7 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'AI-powered editing suggestions',
         'Quick rendering and publishing'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=XPRESSO+Dashboard'
+      image: 'https://i.ibb.co/x8PCftLS/Screenshot-2025-04-04-072109.png'
     },
     {
       id: 'koel',
@@ -59,7 +59,7 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'Customizable tone and emotion settings',
         'Seamless integration with XPRESSO'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=KOEL+Voice+Tool'
+      image: 'https://www.kpoint.com/static/281955a574e8dd85a5a85dbea3b96094/b50a7/koelMultiVoiceAi.avif'
     },
     {
       id: 'play',
@@ -77,7 +77,7 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'Branching scenarios for personalized journeys',
         'Detailed engagement analytics'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=PLAY+Interactive+Video'
+      image: 'https://www.kpoint.com/static/d3c7e050d0ba4bb8a1414866cd08fe7a/ecc4b/playUiDesktop.avif'
     },
     {
       id: 'fab',
@@ -102,7 +102,7 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'One-click multi-platform publishing',
         'Engagement tracking across platforms'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=FAB+Social+Video'
+      image: 'https://www.kpoint.com/static/127d84c231083be5fbacc6281a8ea97e/abde9/playHyperPersonalization.avif'
     },
     {
       id: 'tube',
@@ -120,7 +120,7 @@ const Features = ({ className = '' }: FeaturesProps) => {
         'AI-powered content search capabilities',
         'Seamless integration with other KPoint tools'
       ],
-      image: 'https://dummyimage.com/800x600/e2e8f0/000000&text=TUBE+Analytics+Dashboard'
+      image: 'https://www.kpoint.com/static/7a3ba96ea720b786d6eb492b3a61234c/abde9/hyperPersonalization.avif'
     }
   ];
 
